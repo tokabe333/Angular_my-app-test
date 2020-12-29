@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+a {
+	:visited {
+		color: #000;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	td {
+		border: 1px solid #ccc;
+		padding: 4px;
+	}
+
+	th{
+		background-color:  #ddd;
+		text-align: left;
+	}
+}
