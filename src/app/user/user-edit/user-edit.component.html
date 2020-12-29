@@ -1,1 +1,19 @@
-<p>user-edit works!</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+	<input type="hidden" name="id" [ngModel]="user.id">
+	<table>
+		<tr>
+			<th>Id</th>
+			<td>{{user.id}}</td>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td><input type="text" name="name" [ngModel]="user.name"></td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td><input type="text" name="email" [ngModel]="user.email"></td>
+		</tr>
+	</table>
+	<button type="submit">OK</button>
+	<button routerLink="/users">Cancel</button>
+</form>
