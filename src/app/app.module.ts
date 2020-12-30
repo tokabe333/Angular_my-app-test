@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { ConfirmDialogComponent } from './tools/confirm-dialog/confirm-dialog.co
 		FormsModule,
 		MatDialogModule,
 		BrowserAnimationsModule,
+		HttpClientModule,
 	],
 	providers: [
 		UserService,

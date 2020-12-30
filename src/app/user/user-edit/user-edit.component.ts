@@ -12,7 +12,7 @@ import { UserService } from "../user.service";
 	styleUrls: ['./user-edit.component.scss']
 })
 export class UserEditComponent implements OnInit {
-	user!: User;
+	user: User = { id: 0, name: "", email: "" };
 
 	constructor(
 		private route: ActivatedRoute,
@@ -23,9 +23,7 @@ export class UserEditComponent implements OnInit {
 
 	ngOnInit(): void {
 		const id = Number(this.route.snapshot.paramMap.get("id"));
-		let ngo = this.service.getUser(id);
-		if (ngo === undefined) return;
-		this.user = ngo;
+		this.service.getUser(id).subscribe(res => { this.user = res; })
 	}
 
 	onSubmit(form: any): void {
@@ -47,8 +45,7 @@ export class UserEditComponent implements OnInit {
 
 		dialogRef.afterClosed().subscribe(result => {
 			if (result == true) {
-				this.service.setUser(user);
-				this.router.navigate(["/users"]);
+				this.service.setUser(user).subscribe(() => { this.router.navigate(["/users"]); });
 			}
 		});
 	}
